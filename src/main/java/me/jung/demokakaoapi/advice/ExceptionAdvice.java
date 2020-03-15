@@ -55,11 +55,13 @@ public class ExceptionAdvice {
     }
 
     @ExceptionHandler(CCommunicationException.class)
+    @ResponseStatus(HttpStatus.UNAUTHORIZED)
     public CommonResult communicationException(HttpServletRequest request, CCommunicationException e) {
         return responseService.getFailResult(Integer.valueOf(getMessage("communicationError.code")), getMessage("communicationError.msg"));
     }
 
     @ExceptionHandler(CUserExistException.class)
+    @ResponseStatus(HttpStatus.UNAUTHORIZED)
     public CommonResult communicationException(HttpServletRequest request, CUserExistException e) {
         return responseService.getFailResult(Integer.valueOf(getMessage("existingUser.code")), getMessage("existingUser.msg"));
     }

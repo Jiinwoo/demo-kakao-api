@@ -1,4 +1,24 @@
-spring.jpa.show_sql=true
-spring.jpa.properties.hibernate.dialect=org.hibernate.dialect.MySQL5InnoDBDialect
-spring.h2.console.enabled=true
-spring.session.store-type=jdbc
+spring:
+  datasource:
+    url: jdbc:h2:mem:testdb;MODE=MySQL;DB_CLOSE_DELAY=-1
+    username: sa
+    password:
+    driver-class-name: org.h2.Driver
+  jpa:
+    show-sql: true
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+  h2:
+    console:
+      enabled: true
+  session:
+    store-type: jdbc
+  social:
+    kakao:
+      client_id: asd # 앱생성시 받은 REST API 키
+      redirect: /social/login/kakao
+      url:
+        login: https://kauth.kakao.com/oauth/authorize
+        token: https://kauth.kakao.com/oauth/token
+        profile: https://kapi.kakao.com/v2/user/me
