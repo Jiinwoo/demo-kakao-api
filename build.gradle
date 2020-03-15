@@ -6,7 +6,7 @@ plugins {
 
 group = 'me.jung'
 version = '0.0.1-SNAPSHOT'
-sourceCompatibility = '11'
+sourceCompatibility = '8'
 
 configurations {
 	compileOnly {
@@ -35,7 +35,7 @@ dependencies {
 	annotationProcessor 'org.projectlombok:lombok'
 
 	implementation 'junit:junit:4.12'
-	testRuntimeOnly('com.h2database:h2')
+	runtimeOnly 'com.h2database:h2'
 	testImplementation('org.springframework.boot:spring-boot-starter-test')
 	testImplementation 'org.springframework.security:spring-security-test'
 }
