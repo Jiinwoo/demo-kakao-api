@@ -6,7 +6,7 @@ logging:
 spring:
   profiles: local
   datasource:
-    url: jdbc:mariadb://demokakao.cavst1k23eg8.ap-northeast-2.rds.amazonaws.com:3306/demokakao
+    url: jdbc:mariadb://localhost:3306/demokakao
     driver-class-name: org.mariadb.jdbc.Driver
     username: root
     password: password
